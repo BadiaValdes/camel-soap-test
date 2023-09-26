@@ -33,7 +33,11 @@ public class SoapApplication implements CommandLineRunner {
 				"FOREIGN KEY (genre_id) references  genre(id))");
 
 
-
+		jdbcTemplate.execute("CREATE PROCEDURE changeName(idG varchar) language plpgsql as $$ " +
+				"BEGIN " +
+				"UPDATE genre SET name = 'azul' WHERE id = idG;" +
+				"commit;" +
+				"END;$$");
 
 	}
 }
