@@ -17,18 +17,7 @@ import javax.sql.DataSource;
 public class SoapRoute extends RouteBuilder {
 
 
-    @Autowired
-    DataSource dataSource;
-
-    public DataSource getDataSource() {
-        return dataSource;
-    }
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
-
-    //define the SQL Component bean which will be used as an endpoint in our route
+   //define the SQL Component bean which will be used as an endpoint in our route
     @Bean
     public SqlComponent sql(DataSource dataSource) {
         SqlComponent sql = new SqlComponent();
